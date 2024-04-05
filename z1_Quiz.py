@@ -19,6 +19,15 @@ class QuizApp:
         self.label = tk.Label(master, text="Select a category:")
         self.label.pack()
         
+        self.combo_box = ttk.Combobox(master, textvariable=self.category_var, values=[
+            "Taxation", "Finance", "Business App Development", 
+            "Cost Accounting", "Financial Accounting", "Business Analytics"
+        ])
+        self.combo_box.pack()
+        
+        self.start_button = tk.Button(master, text="Start Quiz Now", command=self.start_quiz)
+        self.start_button.pack()
+        
 
 
 if __name__ == "__main__":
