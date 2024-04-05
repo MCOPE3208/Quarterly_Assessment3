@@ -99,6 +99,12 @@ class QuizWindow:
             color = "red"
         self.display_feedback(feedback, color)
 
+    def display_feedback(self, feedback, color):
+        self.feedback_label.config(text=feedback, fg=color)
+
+        self.quiz_window.after(2000, self.next_question)
+
+
 
 if __name__ == "__main__":
     root = tk.Tk()
