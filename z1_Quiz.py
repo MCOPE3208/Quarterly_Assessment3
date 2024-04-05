@@ -9,6 +9,17 @@ class QuizQuestion:
         self.options = options
         self.correct_answer = correct_answer
 
+class QuizApp:
+    def __init__(self, master):
+        self.master = master
+        self.master.title("Quiz Category Selection")
+        
+        self.category_var = tk.StringVar()
+        
+        self.label = tk.Label(master, text="Select a category:")
+        self.label.pack()
+        
+
 
 if __name__ == "__main__":
     root = tk.Tk()
