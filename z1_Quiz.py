@@ -36,6 +36,21 @@ class QuizApp:
             quiz_questions = self.load_questions(category)
             QuizWindow(quiz_questions, category, self.master)   
 
+    def load_questions(self, category):
+        conn = sqlite3.connect("QuizQA.db")
+        cursor = conn.cursor()
+
+        cursor.execute(f"SELECT question, option1, option2, option3, option4, correct_answer FROM {category.replace(' ', '')} ORDER BY RANDOM() LIMIT 10")      
+        questions = cursor.fetchall()
+        quiz_questions = []
+        for question in questions:
+            question_text, option1, option2, option3, option4, correct_answer = question
+            options = [option1, option2, option3, option4]
+            quiz_questions.append(QuizQuestion(question_text, options, correct_answer))
+    
+        conn.close()
+        return quiz_questions
+
 
 if __name__ == "__main__":
     root = tk.Tk()
