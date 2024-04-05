@@ -81,6 +81,24 @@ class QuizWindow:
         self.submit_button = tk.Button(self.quiz_window, text="Submit Answer", command=self.check_answer)
         self.submit_button.pack(side="bottom", pady=10)
         
+    def check_answer(self):
+        selected_index = self.radio_vars[self.current_question_index].get()
+        if selected_index == -1:
+            messagebox.showerror("Error", "Please select an answer.")
+            return
+
+        selected_option = self.quiz_questions[self.current_question_index].options[selected_index].strip().lower()  # Get selected option
+        correct_answer = self.quiz_questions[self.current_question_index].correct_answer.strip().lower()  # Get correct answer
+
+        if selected_option == correct_answer:
+            self.score += 1
+            feedback = "Correct!"
+            color = "green"
+        else:
+            feedback = f"Incorrect. The correct answer is: {self.quiz_questions[self.current_question_index].correct_answer}"
+            color = "red"
+        self.display_feedback(feedback, color)
+
 
 if __name__ == "__main__":
     root = tk.Tk()
