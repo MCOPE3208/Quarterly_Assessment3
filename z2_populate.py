@@ -5,7 +5,7 @@ def create_database():
     cursor = conn.cursor()
 
     cursor.execute("""
-    CREATE TABLE IF NOT EXISTS BusinessAppDevelopment (
+    CREATE TABLE IF NOT EXISTS CostAccounting (
         id INTEGER PRIMARY KEY,
         category TEXT,
         question TEXT,
@@ -18,19 +18,19 @@ def create_database():
     """)
 
     sample_questions = [
-        ("BusinessAppDevelopment","What is the primary programming language used for developing Android apps?", "A. Java", "B. Python", "C. Swift", "D. JavaScript", "A. Java"),
-        ("BusinessAppDevelopment","Which of the following is not a commonly used database management system for business applications?", "A. MySQL", "B. SQLite", "C. Oracle", "D. MongoDB", "D. MongoDB"),
-        ("BusinessAppDevelopment","Which framework is commonly used for building web applications with Python?", "A. Flask", "B. Django", "C. Express.js", "D. Ruby on Rails", "B. Django"),
-        ("BusinessAppDevelopment","What does MVC stand for in the context of software development?", "A. Model-View-Coding", "B. Model-View-Component", "C. Model-View-Controller", "D. Model-View-Command", "C. Model-View-Controller"),
-        ("BusinessAppDevelopment","Which programming language is commonly used for building cross-platform mobile apps?", "A. Java", "B. Swift", "C. Kotlin", "D. JavaScript", "D. JavaScript"),
-        ("BusinessAppDevelopment","What does API stand for in the context of software development?", "A. Application Programming Interface", "B. Advanced Programming Interface", "C. Application Process Integration", "D. Advanced Program Instruction", "A. Application Programming Interface"),
-        ("BusinessAppDevelopment","Which of the following is not an example of a cloud computing service?", "A. Amazon Web Services (AWS)", "B. Google Cloud Platform (GCP)", "C. Microsoft Excel", "D. IBM Cloud", "C. Microsoft Excel"),
-        ("BusinessAppDevelopment","Which design pattern is commonly used for managing state in front-end applications?", "A. Singleton", "B. Observer", "C. Factory", "D. Redux", "D. Redux"),
-        ("BusinessAppDevelopment","What is the purpose of version control systems like Git in software development?", "A. Testing code", "B. Collaborating with other developers", "C. Documenting requirements", "D. Writing code", "B. Collaborating with other developers"),
-        ("BusinessAppDevelopment","What is the primary function of a RESTful API?", "A. Storing data", "B. Creating user interfaces", "C. Handling HTTP requests", "D. Processing payment transactions", "C. Handling HTTP requests")
+        ("CostAccounting","What is the main objective of cost accounting?", "A. Profit maximization", "B. Cost minimization", "C. Revenue maximization", "D. Market share maximization", "B. Cost minimization"),
+        ("CostAccounting","Which cost is also known as traceable cost?", "A. Direct cost", "B. Indirect cost", "C. Fixed cost", "D. Variable cost", "A. Direct cost"),
+        ("CostAccounting","What is the formula to calculate total manufacturing cost?", "A. Direct materials + Direct labor + Variable manufacturing overhead", "B. Direct materials + Direct labor + Fixed manufacturing overhead", "C. Direct materials + Variable manufacturing overhead", "D. Direct labor + Fixed manufacturing overhead", "A. Direct materials + Direct labor + Variable manufacturing overhead"),
+        ("CostAccounting","What is the term for the cost incurred to acquire or produce a product?", "A. Manufacturing cost", "B. Selling cost", "C. Administrative cost", "D. Period cost", "A. Manufacturing cost"),
+        ("CostAccounting","What is the formula for calculating contribution margin per unit?", "A. Selling price - Variable cost per unit", "B. Selling price + Variable cost per unit", "C. Fixed cost per unit - Variable cost per unit", "D. Fixed cost per unit / Variable cost per unit", "A. Selling price - Variable cost per unit"),
+        ("CostAccounting","Which method allocates overhead costs based on the actual usage of resources?", "A. Traditional costing", "B. Activity-based costing", "C. Direct costing", "D. Absorption costing", "B. Activity-based costing"),
+        ("CostAccounting","What is the term for the rate used to apply manufacturing overhead to units produced?", "A. Predetermined overhead rate", "B. Actual overhead rate", "C. Variable overhead rate", "D. Fixed overhead rate", "A. Predetermined overhead rate"),
+        ("CostAccounting","Which costing method allocates fixed manufacturing overhead costs evenly across all units produced?", "A. Variable costing", "B. Absorption costing", "C. Job costing", "D. Process costing", "B. Absorption costing"),
+        ("CostAccounting","What is the formula to calculate the cost of goods manufactured?", "A. Beginning Work in Process Inventory + Total Manufacturing Costs - Ending Work in Process Inventory", "B. Beginning Finished Goods Inventory + Cost of Goods Sold - Ending Finished Goods Inventory", "C. Beginning Raw Materials Inventory + Purchases - Ending Raw Materials Inventory", "D. Beginning Work in Process Inventory + Direct Materials Used + Direct Labor + Manufacturing Overhead", "D. Beginning Work in Process Inventory + Direct Materials Used + Direct Labor + Manufacturing Overhead"),
+        ("CostAccounting","Which type of cost changes in direct proportion to changes in the level of activity?", "A. Variable cost", "B. Fixed cost", "C. Mixed cost", "D. Step cost", "A. Variable cost")
     ]
 
-    cursor.executemany("INSERT INTO BusinessAppDevelopment (category, question, option1, option2, option3, option4, correct_answer) VALUES (?, ?, ?, ?, ?, ?, ?)", sample_questions)
+    cursor.executemany("INSERT INTO CostAccounting (category, question, option1, option2, option3, option4, correct_answer) VALUES (?, ?, ?, ?, ?, ?, ?)", sample_questions)
     
     conn.commit()
     conn.close()
