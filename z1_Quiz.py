@@ -126,7 +126,12 @@ class QuizWindow:
             radio_button.pack(anchor="w")
             self.radio_buttons.append(radio_button)
     
+    def back_to_category_selection(self):
+        self.quiz_window.destroy()  # Close the quiz window
+        self.master.deiconify()  # Show the category selection window
+
 
 if __name__ == "__main__":
     root = tk.Tk()
+    app = QuizApp(root)
     root.mainloop()
