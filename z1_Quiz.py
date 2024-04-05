@@ -74,6 +74,12 @@ class QuizWindow:
             radio_button = tk.Radiobutton(self.quiz_window, text=option, variable=self.radio_vars[self.current_question_index], value=i)
             radio_button.pack(anchor="w")
             self.radio_buttons.append(radio_button)
+
+        self.feedback_label = tk.Label(self.quiz_window, text="", fg="black")
+        self.feedback_label.pack(side="bottom", pady=5)
+
+        self.submit_button = tk.Button(self.quiz_window, text="Submit Answer", command=self.check_answer)
+        self.submit_button.pack(side="bottom", pady=10)
         
 
 if __name__ == "__main__":
