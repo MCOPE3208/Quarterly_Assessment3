@@ -27,7 +27,14 @@ class QuizApp:
         
         self.start_button = tk.Button(master, text="Start Quiz Now", command=self.start_quiz)
         self.start_button.pack()
-        
+
+    def start_quiz(self):
+        category = self.category_var.get()
+        if category:
+            self.combo_box.set("")  # Reset the combo box
+            self.master.withdraw()  # Hide the category selection window
+            quiz_questions = self.load_questions(category)
+            QuizWindow(quiz_questions, category, self.master)   
 
 
 if __name__ == "__main__":
