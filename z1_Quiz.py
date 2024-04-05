@@ -65,6 +65,15 @@ class QuizWindow:
         
         self.question_label = tk.Label(self.quiz_window, text=self.quiz_questions[self.current_question_index].question)
         self.question_label.pack()
+
+        self.radio_vars = []
+        self.radio_buttons = []
+        for i, option in enumerate(self.quiz_questions[self.current_question_index].options):
+            radio_var = tk.IntVar(value=-1)  # Use -1 to indicate no selection
+            self.radio_vars.append(radio_var)
+            radio_button = tk.Radiobutton(self.quiz_window, text=option, variable=self.radio_vars[self.current_question_index], value=i)
+            radio_button.pack(anchor="w")
+            self.radio_buttons.append(radio_button)
         
 
 if __name__ == "__main__":
