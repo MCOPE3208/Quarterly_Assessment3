@@ -115,7 +115,17 @@ class QuizWindow:
             self.back_button = tk.Button(self.quiz_window, text="Back to Category Selection", command=self.back_to_category_selection)
             self.back_button.pack(side="bottom", pady=10)
 
+    def update_question(self):
+        for radio_button in self.radio_buttons:
+            radio_button.destroy()  # Destroy previous radio buttons
 
+        self.question_label.config(text=self.quiz_questions[self.current_question_index].question)
+        self.radio_vars.append(tk.IntVar(value=-1))  # Set default value to -1 for the new question
+        for i, option in enumerate(self.quiz_questions[self.current_question_index].options):
+            radio_button = tk.Radiobutton(self.quiz_window, text=option, variable=self.radio_vars[self.current_question_index], value=i)
+            radio_button.pack(anchor="w")
+            self.radio_buttons.append(radio_button)
+    
 
 if __name__ == "__main__":
     root = tk.Tk()
