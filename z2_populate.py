@@ -5,7 +5,7 @@ def create_database():
     cursor = conn.cursor()
 
     cursor.execute("""
-    CREATE TABLE IF NOT EXISTS Taxation (
+    CREATE TABLE IF NOT EXISTS Finance (
         id INTEGER PRIMARY KEY,
         category TEXT,
         question TEXT,
@@ -17,21 +17,21 @@ def create_database():
     )
     """)
 
-    # Add sample questions for testing
     sample_questions = [
-        ("Taxation", "What is the main purpose of taxation?", "A. Generate revenue", "B. Discourage consumption", "C. Encourage saving", "D. None of the above", "A. Generate revenue"),
-        ("Taxation", "Which of the following is a direct tax?", "A. Value Added Tax (VAT)", "B. Sales Tax", "C. Income Tax", "D. Excise Duty", "C. Income Tax"),
-        ("Taxation", "Which of the following taxes is based on the value of real estate?", "A. Property Tax", "B. Excise Tax", "C. Sales Tax", "D. Income Tax", "A. Property Tax"),
-        ("Taxation", "Which tax is levied on the transfer of property by one individual to another?", "A. Estate Tax", "B. Excise Tax", "C. Value Added Tax (VAT)", "D. Corporate Tax", "A. Estate Tax"),
-        ("Taxation", "What is the name of the tax levied on the profits of corporations?", "A. Income Tax", "B. Capital Gains Tax", "C. Corporate Tax", "D. Property Tax", "C. Corporate Tax"),
-        ("Taxation", "Which of the following is a type of consumption tax?", "A. Excise Tax", "B. Income Tax", "C. Payroll Tax", "D. Property Tax", "A. Excise Tax"),
-        ("Taxation", "Which tax is imposed on the earnings of individuals and businesses within a specific jurisdiction?", "A. Property Tax", "B. Income Tax", "C. Sales Tax", "D. Estate Tax", "B. Income Tax"),
-        ("Taxation", "What type of tax is charged on the income of individuals and corporations by the government?", "A. Property Tax", "B. Income Tax", "C. Sales Tax", "D. Excise Tax", "B. Income Tax"),
-        ("Taxation", "What tax is levied on the transfer of money or property by inheritance?", "A. Sales Tax", "B. Estate Tax", "C. Excise Tax", "D. Corporate Tax", "B. Estate Tax"),
-        ("Taxation", "What tax is paid directly by the person or entity to the imposing entity?", "A. Indirect Tax", "B. Direct Tax", "C. Progressive Tax", "D. Regressive Tax", "B. Direct Tax")
+        ("Finance", "What is the primary goal of financial management?", "A. Maximizing profits", "B. Maximizing shareholder wealth", "C. Minimizing expenses", "D. Maximizing revenue", "B. Maximizing shareholder wealth"),
+        ("Finance", "What is the formula for calculating Return on Investment (ROI)?", "A. (Net Profit / Revenue) * 100", "B. (Net Profit / Investment) * 100", "C. (Investment / Net Profit) * 100", "D. (Revenue / Investment) * 100", "B. (Net Profit / Investment) * 100"),
+        ("Finance", "What is the term used to describe the rate at which the general level of prices for goods and services is rising?", "A. Recession", "B. Deflation", "C. Inflation", "D. Depression", "C. Inflation"),
+        ("Finance", "What does the acronym 'GAAP' stand for in accounting and finance?", "A. Generally Accepted Accounting Procedures", "B. Generally Accepted Auditing Principles", "C. Generally Accepted Accounting Principles", "D. Generally Approved Accounting Practices", "C. Generally Accepted Accounting Principles"),
+        ("Finance", "What does the debt-to-equity ratio measure?", "A. A company's liquidity", "B. A company's profitability", "C. A company's financial leverage", "D. A company's asset management efficiency", "C. A company's financial leverage"),
+        ("Finance", "Which financial statement reports a company's revenues and expenses over a period of time?", "A. Balance Sheet", "B. Income Statement", "C. Cash Flow Statement", "D. Statement of Retained Earnings", "B. Income Statement"),
+        ("Finance", "What does the term 'diversification' refer to in finance?", "A. Investing in a single asset class", "B. Spreading investments across different assets", "C. Investing only in stocks", "D. Borrowing money to invest", "B. Spreading investments across different assets"),
+        ("Finance", "What is the formula for calculating Net Present Value (NPV)?", "A. Present Value / Future Value", "B. Future Value / Present Value", "C. Present Value - Future Value", "D. Future Value - Present Value", "C. Present Value - Future Value"),
+        ("Finance", "What does the term 'liquidity' refer to in finance?", "A. How quickly an asset can be converted into cash", "B. How much an asset is worth", "C. How risky an investment is", "D. How profitable a company is", "A. How quickly an asset can be converted into cash"),
+        ("Finance", "What is the role of a financial manager in a company?", "A. To handle human resources", "B. To oversee marketing efforts", "C. To manage financial resources and risks", "D. To develop new products", "C. To manage financial resources and risks")
     ]
 
-    cursor.executemany("INSERT INTO Taxation (category, question, option1, option2, option3, option4, correct_answer) VALUES (?, ?, ?, ?, ?, ?, ?)", sample_questions)
+    cursor.executemany("INSERT INTO Finance (category, question, option1, option2, option3, option4, correct_answer) VALUES (?, ?, ?, ?, ?, ?, ?)", sample_questions)
+
     conn.commit()
     conn.close()
 create_database()
