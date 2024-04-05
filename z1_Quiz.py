@@ -59,6 +59,12 @@ class QuizWindow:
         self.current_question_index = 0
         self.score = 0
         self.quiz_ended = False  # Flag to indicate if the quiz has ended
+
+        self.quiz_window = tk.Toplevel(master)
+        self.quiz_window.title("Quiz Window")
+        
+        self.question_label = tk.Label(self.quiz_window, text=self.quiz_questions[self.current_question_index].question)
+        self.question_label.pack()
         
 
 if __name__ == "__main__":
