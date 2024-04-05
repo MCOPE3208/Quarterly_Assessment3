@@ -5,7 +5,7 @@ def create_database():
     cursor = conn.cursor()
 
     cursor.execute("""
-    CREATE TABLE IF NOT EXISTS Finance (
+    CREATE TABLE IF NOT EXISTS BusinessAppDevelopment (
         id INTEGER PRIMARY KEY,
         category TEXT,
         question TEXT,
@@ -18,20 +18,20 @@ def create_database():
     """)
 
     sample_questions = [
-        ("Finance", "What is the primary goal of financial management?", "A. Maximizing profits", "B. Maximizing shareholder wealth", "C. Minimizing expenses", "D. Maximizing revenue", "B. Maximizing shareholder wealth"),
-        ("Finance", "What is the formula for calculating Return on Investment (ROI)?", "A. (Net Profit / Revenue) * 100", "B. (Net Profit / Investment) * 100", "C. (Investment / Net Profit) * 100", "D. (Revenue / Investment) * 100", "B. (Net Profit / Investment) * 100"),
-        ("Finance", "What is the term used to describe the rate at which the general level of prices for goods and services is rising?", "A. Recession", "B. Deflation", "C. Inflation", "D. Depression", "C. Inflation"),
-        ("Finance", "What does the acronym 'GAAP' stand for in accounting and finance?", "A. Generally Accepted Accounting Procedures", "B. Generally Accepted Auditing Principles", "C. Generally Accepted Accounting Principles", "D. Generally Approved Accounting Practices", "C. Generally Accepted Accounting Principles"),
-        ("Finance", "What does the debt-to-equity ratio measure?", "A. A company's liquidity", "B. A company's profitability", "C. A company's financial leverage", "D. A company's asset management efficiency", "C. A company's financial leverage"),
-        ("Finance", "Which financial statement reports a company's revenues and expenses over a period of time?", "A. Balance Sheet", "B. Income Statement", "C. Cash Flow Statement", "D. Statement of Retained Earnings", "B. Income Statement"),
-        ("Finance", "What does the term 'diversification' refer to in finance?", "A. Investing in a single asset class", "B. Spreading investments across different assets", "C. Investing only in stocks", "D. Borrowing money to invest", "B. Spreading investments across different assets"),
-        ("Finance", "What is the formula for calculating Net Present Value (NPV)?", "A. Present Value / Future Value", "B. Future Value / Present Value", "C. Present Value - Future Value", "D. Future Value - Present Value", "C. Present Value - Future Value"),
-        ("Finance", "What does the term 'liquidity' refer to in finance?", "A. How quickly an asset can be converted into cash", "B. How much an asset is worth", "C. How risky an investment is", "D. How profitable a company is", "A. How quickly an asset can be converted into cash"),
-        ("Finance", "What is the role of a financial manager in a company?", "A. To handle human resources", "B. To oversee marketing efforts", "C. To manage financial resources and risks", "D. To develop new products", "C. To manage financial resources and risks")
+        ("BusinessAppDevelopment","What is the primary programming language used for developing Android apps?", "A. Java", "B. Python", "C. Swift", "D. JavaScript", "A. Java"),
+        ("BusinessAppDevelopment","Which of the following is not a commonly used database management system for business applications?", "A. MySQL", "B. SQLite", "C. Oracle", "D. MongoDB", "D. MongoDB"),
+        ("BusinessAppDevelopment","Which framework is commonly used for building web applications with Python?", "A. Flask", "B. Django", "C. Express.js", "D. Ruby on Rails", "B. Django"),
+        ("BusinessAppDevelopment","What does MVC stand for in the context of software development?", "A. Model-View-Coding", "B. Model-View-Component", "C. Model-View-Controller", "D. Model-View-Command", "C. Model-View-Controller"),
+        ("BusinessAppDevelopment","Which programming language is commonly used for building cross-platform mobile apps?", "A. Java", "B. Swift", "C. Kotlin", "D. JavaScript", "D. JavaScript"),
+        ("BusinessAppDevelopment","What does API stand for in the context of software development?", "A. Application Programming Interface", "B. Advanced Programming Interface", "C. Application Process Integration", "D. Advanced Program Instruction", "A. Application Programming Interface"),
+        ("BusinessAppDevelopment","Which of the following is not an example of a cloud computing service?", "A. Amazon Web Services (AWS)", "B. Google Cloud Platform (GCP)", "C. Microsoft Excel", "D. IBM Cloud", "C. Microsoft Excel"),
+        ("BusinessAppDevelopment","Which design pattern is commonly used for managing state in front-end applications?", "A. Singleton", "B. Observer", "C. Factory", "D. Redux", "D. Redux"),
+        ("BusinessAppDevelopment","What is the purpose of version control systems like Git in software development?", "A. Testing code", "B. Collaborating with other developers", "C. Documenting requirements", "D. Writing code", "B. Collaborating with other developers"),
+        ("BusinessAppDevelopment","What is the primary function of a RESTful API?", "A. Storing data", "B. Creating user interfaces", "C. Handling HTTP requests", "D. Processing payment transactions", "C. Handling HTTP requests")
     ]
 
-    cursor.executemany("INSERT INTO Finance (category, question, option1, option2, option3, option4, correct_answer) VALUES (?, ?, ?, ?, ?, ?, ?)", sample_questions)
-
+    cursor.executemany("INSERT INTO BusinessAppDevelopment (category, question, option1, option2, option3, option4, correct_answer) VALUES (?, ?, ?, ?, ?, ?, ?)", sample_questions)
+    
     conn.commit()
     conn.close()
 create_database()
