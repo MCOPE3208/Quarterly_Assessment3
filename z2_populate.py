@@ -5,7 +5,7 @@ def create_database():
     cursor = conn.cursor()
 
     cursor.execute("""
-    CREATE TABLE IF NOT EXISTS CostAccounting (
+    CREATE TABLE IF NOT EXISTS FinancialAccounting (
         id INTEGER PRIMARY KEY,
         category TEXT,
         question TEXT,
@@ -18,19 +18,19 @@ def create_database():
     """)
 
     sample_questions = [
-        ("CostAccounting","What is the main objective of cost accounting?", "A. Profit maximization", "B. Cost minimization", "C. Revenue maximization", "D. Market share maximization", "B. Cost minimization"),
-        ("CostAccounting","Which cost is also known as traceable cost?", "A. Direct cost", "B. Indirect cost", "C. Fixed cost", "D. Variable cost", "A. Direct cost"),
-        ("CostAccounting","What is the formula to calculate total manufacturing cost?", "A. Direct materials + Direct labor + Variable manufacturing overhead", "B. Direct materials + Direct labor + Fixed manufacturing overhead", "C. Direct materials + Variable manufacturing overhead", "D. Direct labor + Fixed manufacturing overhead", "A. Direct materials + Direct labor + Variable manufacturing overhead"),
-        ("CostAccounting","What is the term for the cost incurred to acquire or produce a product?", "A. Manufacturing cost", "B. Selling cost", "C. Administrative cost", "D. Period cost", "A. Manufacturing cost"),
-        ("CostAccounting","What is the formula for calculating contribution margin per unit?", "A. Selling price - Variable cost per unit", "B. Selling price + Variable cost per unit", "C. Fixed cost per unit - Variable cost per unit", "D. Fixed cost per unit / Variable cost per unit", "A. Selling price - Variable cost per unit"),
-        ("CostAccounting","Which method allocates overhead costs based on the actual usage of resources?", "A. Traditional costing", "B. Activity-based costing", "C. Direct costing", "D. Absorption costing", "B. Activity-based costing"),
-        ("CostAccounting","What is the term for the rate used to apply manufacturing overhead to units produced?", "A. Predetermined overhead rate", "B. Actual overhead rate", "C. Variable overhead rate", "D. Fixed overhead rate", "A. Predetermined overhead rate"),
-        ("CostAccounting","Which costing method allocates fixed manufacturing overhead costs evenly across all units produced?", "A. Variable costing", "B. Absorption costing", "C. Job costing", "D. Process costing", "B. Absorption costing"),
-        ("CostAccounting","What is the formula to calculate the cost of goods manufactured?", "A. Beginning Work in Process Inventory + Total Manufacturing Costs - Ending Work in Process Inventory", "B. Beginning Finished Goods Inventory + Cost of Goods Sold - Ending Finished Goods Inventory", "C. Beginning Raw Materials Inventory + Purchases - Ending Raw Materials Inventory", "D. Beginning Work in Process Inventory + Direct Materials Used + Direct Labor + Manufacturing Overhead", "D. Beginning Work in Process Inventory + Direct Materials Used + Direct Labor + Manufacturing Overhead"),
-        ("CostAccounting","Which type of cost changes in direct proportion to changes in the level of activity?", "A. Variable cost", "B. Fixed cost", "C. Mixed cost", "D. Step cost", "A. Variable cost")
+        ("FinancialAccounting","What is the accounting equation?", "A. Assets = Liabilities - Equity", "B. Assets = Liabilities + Equity", "C. Assets = Liabilities / Equity", "D. Assets = Liabilities * Equity", "B. Assets = Liabilities + Equity"),
+        ("FinancialAccounting","Which financial statement shows a company's revenues and expenses over a period of time?", "A. Balance sheet", "B. Income statement", "C. Statement of cash flows", "D. Statement of retained earnings", "B. Income statement"),
+        ("FinancialAccounting","What is the term for the amount earned from sales of goods or services?", "A. Profit", "B. Revenue", "C. Expense", "D. Liability", "B. Revenue"),
+        ("FinancialAccounting","Which accounting principle requires that expenses be recorded in the same period as the revenues they help to generate?", "A. Matching principle", "B. Revenue recognition principle", "C. Going concern principle", "D. Conservatism principle", "A. Matching principle"),
+        ("FinancialAccounting","What is the term for the cost of goods sold by a company during a specific period?", "A. Gross profit", "B. Operating income", "C. Net income", "D. Cost of goods sold (COGS)", "D. Cost of goods sold (COGS)"),
+        ("FinancialAccounting","Which financial statement reports a company's assets, liabilities, and shareholders' equity at a specific point in time?", "A. Balance sheet", "B. Income statement", "C. Statement of cash flows", "D. Statement of retained earnings", "A. Balance sheet"),
+        ("FinancialAccounting","What is the formula to calculate net income?", "A. Revenue - Expenses", "B. Revenue + Expenses", "C. Assets - Liabilities", "D. Liabilities - Equity", "A. Revenue - Expenses"),
+        ("FinancialAccounting","Which accounting principle states that assets should be recorded at their original cost?", "A. Historical cost principle", "B. Matching principle", "C. Revenue recognition principle", "D. Full disclosure principle", "A. Historical cost principle"),
+        ("FinancialAccounting","What is the term for the profit a company earns before deducting taxes and interest expenses?", "A. Gross profit", "B. Operating profit", "C. Net profit", "D. Earnings before interest and taxes (EBIT)", "B. Operating profit"),
+        ("FinancialAccounting","What is the formula for calculating return on assets (ROA)?", "A. Net income / Total assets", "B. Net income / Shareholders' equity", "C. Total assets / Net income", "D. Total assets / Shareholders' equity", "A. Net income / Total assets")
     ]
 
-    cursor.executemany("INSERT INTO CostAccounting (category, question, option1, option2, option3, option4, correct_answer) VALUES (?, ?, ?, ?, ?, ?, ?)", sample_questions)
+    cursor.executemany("INSERT INTO FinancialAccounting (category, question, option1, option2, option3, option4, correct_answer) VALUES (?, ?, ?, ?, ?, ?, ?)", sample_questions)
     
     conn.commit()
     conn.close()
