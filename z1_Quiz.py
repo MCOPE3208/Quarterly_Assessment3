@@ -104,6 +104,17 @@ class QuizWindow:
 
         self.quiz_window.after(2000, self.next_question)
 
+    def next_question(self):
+        self.feedback_label.config(text="")  # Clear feedback
+        self.current_question_index += 1
+        if self.current_question_index < len(self.quiz_questions):
+            self.update_question()
+        elif not self.quiz_ended:  # Check if the quiz has ended
+            self.feedback_label.config(text=f"Quiz Finished! Your score: {self.score}/{len(self.quiz_questions)}")
+            self.quiz_ended = True  # Set the flag to indicate the quiz has ended
+            self.back_button = tk.Button(self.quiz_window, text="Back to Category Selection", command=self.back_to_category_selection)
+            self.back_button.pack(side="bottom", pady=10)
+
 
 
 if __name__ == "__main__":
