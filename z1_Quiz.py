@@ -51,6 +51,15 @@ class QuizApp:
         conn.close()
         return quiz_questions
 
+class QuizWindow:
+    def __init__(self, quiz_questions, category, master):
+        self.quiz_questions = quiz_questions
+        self.category = category
+        self.master = master
+        self.current_question_index = 0
+        self.score = 0
+        self.quiz_ended = False  # Flag to indicate if the quiz has ended
+        
 
 if __name__ == "__main__":
     root = tk.Tk()
