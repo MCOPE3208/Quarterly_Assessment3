@@ -17,7 +17,7 @@ def create_database():
     )
     """)
 
-    # Add sample questions for testing
+    # Add sample questions for taxation
     sample_questions = [
         #("Taxation", "What is the main purpose of taxation?", "A. Generate revenue", "B. Discourage consumption", "C. Encourage saving", "D. None of the above", "A. Generate revenue"),
         ]
@@ -38,6 +38,7 @@ def create_database():
     )
     """)
 
+# Add sample questions for Finance
     sample_questions = [
         #("Finance", "What is the primary goal of financial management?", "A. Maximizing profits", "B. Maximizing shareholder wealth", "C. Minimizing expenses", "D. Maximizing revenue", "B. Maximizing shareholder wealth"),
         ]
@@ -57,6 +58,7 @@ def create_database():
     )
     """)
 
+# Add sample questions for BusinessAppDevelopment
     sample_questions = [
         #("BusinessAppDevelopment","What is the primary programming language used for developing Android apps?", "A. Java", "B. Python", "C. Swift", "D. JavaScript", "A. Java"),
         ]
@@ -76,6 +78,7 @@ def create_database():
     )
     """)
 
+# Add sample questions for CostAccounting
     sample_questions = [
         #("CostAccounting","What is the main objective of cost accounting?", "A. Profit maximization", "B. Cost minimization", "C. Revenue maximization", "D. Market share maximization", "B. Cost minimization"),
         ]
@@ -95,6 +98,7 @@ def create_database():
     )
     """)
 
+# Add sample questions for FinancialAccounting
     sample_questions = [
         #("FinancialAccounting","What is the accounting equation?", "A. Assets = Liabilities - Equity", "B. Assets = Liabilities + Equity", "C. Assets = Liabilities / Equity", "D. Assets = Liabilities * Equity", "B. Assets = Liabilities + Equity"),
         ]
@@ -114,6 +118,7 @@ def create_database():
     )
     """)
 
+# Add sample questions for BusinessAnalytics
     sample_questions = [
         #("BusinessAnalytics","What is Business Analytics?", "A. The study of business functions", "B. The use of data analysis tools and techniques to make informed business decisions", "C. The process of creating business strategies", "D. The implementation of marketing campaigns", "B. The use of data analysis tools and techniques to make informed business decisions"),
         ]
