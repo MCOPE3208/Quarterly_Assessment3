@@ -8,7 +8,7 @@ Once the user completes the quiz, a message will appear indicating that the quiz
 
 ## File Overview
 
-z1_Quiz.py : The z1_Quiz.py file is the main program for a quiz application, allowing users to select quiz categories, answer questions, receive feedback, and view final scores. It provides a graphical user interface for an interactive quiz experience, all contained within a single Python script 
+z1_Quiz.py : The z1_Quiz.py file is the main program for a quiz application, allowing users to select quiz categories, answer questions, receive feedback, and view final scores. It provides a graphical user interface for an interactive quiz experience, all contained within a single Python script. This is the only file a user needs to run.
 
 z2_populate.py : The z2_populate.py file is responsible for populating the database (QuizQA.db) with questions, options, and correct answers for various quiz categories, such as Taxation, Finance, and Business App Development, facilitating the availability of quiz content for the main application.
 
